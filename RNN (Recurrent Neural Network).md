@@ -22,7 +22,7 @@
 ![[Pasted image 20250421114321.png]]
 
 - Green line that runs all the way accross the top of the unit is callled CELL STATE and represents long term memory
-- Although long memory can modified using multiplication and addition you will notice there are no weighs and baises 
+- Although long memory can modified using multiplication and addition you will notice there are no weighs and biases 
 - The lack of weights and baises allows the Long term memories to flow through a series of unrolled units without causing the gradient to explode or vanish
 
 
