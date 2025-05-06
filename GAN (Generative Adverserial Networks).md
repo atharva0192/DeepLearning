@@ -107,17 +107,17 @@
 ### LSGAN
 - Regression style loss
 
-|Aspect|**Vanilla GAN**|**Progressive GAN**|
-|---|---|---|
-|**Training Strategy**|Train **full-resolution** model from the start (e.g. 128×128)|Start with **tiny resolution** (e.g. 4×4), **grow progressively**|
-|**Resolution during training**|Fixed throughout training|Gradually increases (4×4 → 8×8 → 16×16 → ... 1024×1024)|
-|**Loss Function**|Binary Cross Entropy Loss (original GAN loss)|WGAN-GP loss (preferred) or LSGAN (more stable than BCE)|
-|**Downsampling/Upsampling**|Strided convolutions (downsample) and transpose convs (upsample)|Average pooling for downsampling, nearest-neighbor upsampling|
-|**Normalization**|Batch Normalization|Pixel-wise normalization (generator) + minibatch stddev (discriminator)|
-|**Training Stability**|Very sensitive, easily destabilized|Much **more stable** training, especially for big images|
-|**Artifacts**|Checkerboard artifacts (transpose convs)|Cleaner images (no checkerboard from upsampling)|
-|**Generator Updates**|Direct updates|Also keeps an **Exponential Moving Average** (EMA) for smooth outputs|
-|**Mode Collapse**|Can happen easily|Minibatch stddev reduces it|
+| Aspect                         | **Vanilla GAN**                                                  | **Progressive GAN**                                                     |
+| ------------------------------ | ---------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **Training Strategy**          | Train **full-resolution** model from the start (e.g. 128×128)    | Start with **tiny resolution** (e.g. 4×4), **grow progressively**       |
+| **Resolution during training** | Fixed throughout training                                        | Gradually increases (4×4 → 8×8 → 16×16 → ... 1024×1024)                 |
+| **Loss Function**              | Binary Cross Entropy Loss (original GAN loss)                    | WGAN-GP loss (preferred) or LSGAN (more stable than BCE)                |
+| **Downsampling/Upsampling**    | Strided convolutions (downsample) and transpose convs (upsample) | Average pooling for downsampling, nearest-neighbor upsampling           |
+| **Normalization**              | Batch Normalization                                              | Pixel-wise normalization (generator) + minibatch stddev (discriminator) |
+| **Training Stability**         | Very sensitive, easily destabilized                              | Much **more stable** training, especially for big images                |
+| **Artifacts**                  | Checkerboard artifacts (transpose convs)                         | Cleaner images (no checkerboard from upsampling)                        |
+| **Generator Updates**          | Direct updates                                                   | Also keeps an **Exponential Moving Average** (EMA) for smooth outputs   |
+| **Mode Collapse**              | Can happen easily                                                | Minibatch stddev reduces it                                             |
 
 | Feature                | Progressive GAN             | StyleGAN                               |
 | ---------------------- | --------------------------- | -------------------------------------- |
